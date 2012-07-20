@@ -1,0 +1,245 @@
+jruby-1.6.7 :001 > require 'java'
+ => true 
+jruby-1.6.7 :002 > js = java.security.KeyStore.getInstance("PKCS12")
+
+jruby-1.6.7 :007 > fs = java.io.FileInputStream.new("node1.pkcs12")
+ => #<Java::JavaIo::FileInputStream:0x7eec835f> 
+jruby-1.6.7 :008 > ks.load(fs, "elasticsearch")
+NameError: no method 'load' for arguments (java.io.FileInputStream,org.jruby.RubyString) on Java::JavaSecurity::KeyStore
+	from (irb):8:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :009 > ks.load(fs, "elasticsearch".toCharArray)
+NoMethodError: undefined method `toCharArray' for "elasticsearch":String
+	from (irb):9:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :010 > ks.load(fs, "elasticsearch".to_char_array)
+NoMethodError: undefined method `to_char_array' for "elasticsearch":String
+	from (irb):10:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :011 > ks.load(fs, "elasticsearch".to_java_string)
+NameError: no method 'load' for arguments (java.io.FileInputStream,java.lang.String) on Java::JavaSecurity::KeyStore
+	from (irb):11:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :012 > ks.load(fs, "elasticsearch".to_java)
+NameError: no method 'load' for arguments (java.io.FileInputStream,java.lang.String) on Java::JavaSecurity::KeyStore
+	from (irb):12:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :013 > ks.load(fs, "elasticsearch".to_java.to_char_array)
+ => nil 
+jruby-1.6.7 :014 > ks.aliases
+ => #<#<Class:0x708420ae>:0x2c79cd09> 
+jruby-1.6.7 :015 > ks.aliases.e
+ks.aliases.each                    ks.aliases.each_byte               ks.aliases.each_char               ks.aliases.each_codepoint          ks.aliases.each_cons
+ks.aliases.each_index              ks.aliases.each_key                ks.aliases.each_line               ks.aliases.each_pair               ks.aliases.each_slice
+ks.aliases.each_value              ks.aliases.each_with_index         ks.aliases.echo                    ks.aliases.echo=                   ks.aliases.echo?
+ks.aliases.eid                     ks.aliases.eid=                    ks.aliases.empty                   ks.aliases.empty?                  ks.aliases.enclose
+ks.aliases.enclosed?               ks.aliases.enclosing_class         ks.aliases.enclosing_constructor   ks.aliases.enclosing_method        ks.aliases.end
+ks.aliases.end_with?               ks.aliases.endsWith                ks.aliases.ends_with               ks.aliases.ends_with?              ks.aliases.entries
+ks.aliases.entryInstanceOf         ks.aliases.entry_instance_of       ks.aliases.entry_instance_of?      ks.aliases.enum?                   ks.aliases.enum_cons
+ks.aliases.enum_constant?          ks.aliases.enum_constants          ks.aliases.enum_for                ks.aliases.enum_slice              ks.aliases.enum_with_index
+ks.aliases.eof                     ks.aliases.eof?                    ks.aliases.eql?                    ks.aliases.equal?                  ks.aliases.equals
+ks.aliases.equals?                 ks.aliases.equalsIgnoreCase        ks.aliases.equals_ignore_case      ks.aliases.equals_ignore_case?     ks.aliases.errno
+ks.aliases.error                   ks.aliases.escape                  ks.aliases.eval                    ks.aliases.eval_history=           ks.aliases.evaluate
+ks.aliases.even?                   ks.aliases.exception               ks.aliases.exception_types         ks.aliases.exclude_end?            ks.aliases.executable?
+ks.aliases.executable_real?        ks.aliases.exist?                  ks.aliases.exists?                 ks.aliases.exit                    ks.aliases.exit!
+ks.aliases.exit_value              ks.aliases.exited?                 ks.aliases.exitstatus              ks.aliases.expr                    ks.aliases.extend
+ks.aliases.extend_proxy
+jruby-1.6.7 :015 > ks.aliases.e
+ks.aliases.each                    ks.aliases.each_byte               ks.aliases.each_char               ks.aliases.each_codepoint          ks.aliases.each_cons
+ks.aliases.each_index              ks.aliases.each_key                ks.aliases.each_line               ks.aliases.each_pair               ks.aliases.each_slice
+ks.aliases.each_value              ks.aliases.each_with_index         ks.aliases.echo                    ks.aliases.echo=                   ks.aliases.echo?
+ks.aliases.eid                     ks.aliases.eid=                    ks.aliases.empty                   ks.aliases.empty?                  ks.aliases.enclose
+ks.aliases.enclosed?               ks.aliases.enclosing_class         ks.aliases.enclosing_constructor   ks.aliases.enclosing_method        ks.aliases.end
+ks.aliases.end_with?               ks.aliases.endsWith                ks.aliases.ends_with               ks.aliases.ends_with?              ks.aliases.entries
+ks.aliases.entryInstanceOf         ks.aliases.entry_instance_of       ks.aliases.entry_instance_of?      ks.aliases.enum?                   ks.aliases.enum_cons
+ks.aliases.enum_constant?          ks.aliases.enum_constants          ks.aliases.enum_for                ks.aliases.enum_slice              ks.aliases.enum_with_index
+ks.aliases.eof                     ks.aliases.eof?                    ks.aliases.eql?                    ks.aliases.equal?                  ks.aliases.equals
+ks.aliases.equals?                 ks.aliases.equalsIgnoreCase        ks.aliases.equals_ignore_case      ks.aliases.equals_ignore_case?     ks.aliases.errno
+ks.aliases.error                   ks.aliases.escape                  ks.aliases.eval                    ks.aliases.eval_history=           ks.aliases.evaluate
+ks.aliases.even?                   ks.aliases.exception               ks.aliases.exception_types         ks.aliases.exclude_end?            ks.aliases.executable?
+ks.aliases.executable_real?        ks.aliases.exist?                  ks.aliases.exists?                 ks.aliases.exit                    ks.aliases.exit!
+ks.aliases.exit_value              ks.aliases.exited?                 ks.aliases.exitstatus              ks.aliases.expr                    ks.aliases.extend
+ks.aliases.extend_proxy
+jruby-1.6.7 :015 > ks.aliases.each
+ks.aliases.each              ks.aliases.each_byte         ks.aliases.each_char         ks.aliases.each_codepoint    ks.aliases.each_cons         ks.aliases.each_index
+ks.aliases.each_key          ks.aliases.each_line         ks.aliases.each_pair         ks.aliases.each_slice        ks.aliases.each_value        ks.aliases.each_with_index
+jruby-1.6.7 :015 > ks.aliases.each
+ks.aliases.each              ks.aliases.each_byte         ks.aliases.each_char         ks.aliases.each_codepoint    ks.aliases.each_cons         ks.aliases.each_index
+ks.aliases.each_key          ks.aliases.each_line         ks.aliases.each_pair         ks.aliases.each_slice        ks.aliases.each_value        ks.aliases.each_with_index
+jruby-1.6.7 :015 > ks.aliases.each
+LocalJumpError: yield called out of block
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/site_ruby/shared/builtin/java/java.util.rb:39:in `each'
+	from (irb):15:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :016 > ks.aliases.each {|a| puts a }
+1
+ => nil 
+jruby-1.6.7 :017 > ks.aliases.each {|a| puts a }
+1
+ => nil 
+jruby-1.6.7 :018 > ks.getKey(1)
+ArgumentError: wrong number of arguments (1 for 2)
+	from (irb):18:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :019 > ks.getKey(1, "elasticsearch")
+TypeError: could not coerce Fixnum to class java.lang.String
+	from (irb):19:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :020 > ks.getKey("1", "elasticsearch")
+TypeError: cannot convert instance of class org.jruby.RubyString to class [C
+	from (irb):20:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :021 > ks.getKey("1", "elasticsearch".to_java_string)
+TypeError: cannot convert instance of class org.jruby.java.proxies.ConcreteJavaProxy to class [C
+	from (irb):21:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :022 > ks.getKey("1", "elasticsearch".to_java_string.to_char_array)
+ => #<Java::SunSecurityRsa::RSAPrivateCrtKeyImpl:0x3ffaf3f4> 
+jruby-1.6.7 :023 > key = _
+ => #<Java::SunSecurityRsa::RSAPrivateCrtKeyImpl:0x3ffaf3f4> 
+jruby-1.6.7 :024 > key.to_s
+ => "Sun RSA private CRT key, 1024 bits\n  modulus:          160727294937100674052418117557127189651847571196362732267950231154583669741208039123297843737970625136905838074093728275314295320340327512794696230004970709260030426222477004322723356519420822761943386421709757113314557517682605199785130400421621862729817049636049166692192660633262262212409063658394663469257\n  public exponent:  65537\n  private exponent: 66361290167432246504789383752358280433790735447188293215106967130199421998677820630137423954495127112616309450339536344381487054230265684555467679138570604935864582478411494650663985126110510016796278712413328771885854044040168861797002196779179612739467592969651349039411203366826798970354423036575752449585\n  prime p:          12881064760913307272140348794215365218812157588527751708369960078710726334737118020995429882136612190407167944955303966814500290951515750428720652901432893\n  prime q:          12477795735086779617066495720025704427078106219270378746931643653703136449083621685221898606414461375944347255678109246872961319441665278398323378145927549\n  prime exponent p: 5859049705095223915994076591170789587146046015441846261295276102756713795848352658893049190327485380716811517755124757781714965184013374433986338449909433\n  prime exponent q: 8177576096216065296437478945798923216617052050351435640317088462550977518418460335413060821278171575723418206183231918800686049580221331041799096918469477\n  crt coefficient:  10989245291407261918403667760542540087846823622353672068683359045301080399527173840659655948312835595388549922074394440522546680235110964928707206478446672" 
+jruby-1.6.7 :025 > ks.getCertificate("1", "elasticsearch".to_java_string.to_char_array)
+ArgumentError: wrong number of arguments (2 for 1)
+	from (irb):25:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :026 > ks.getCertificate("1")
+ => #<Java::SunSecurityX509::X509CertImpl:0x304caadb> 
+jruby-1.6.7 :027 > ks.getCertificate("1").to_s
+ => "[\n[\n  Version: V3\n  Subject: CN=node1, O=Internet Widgits Pty Ltd, ST=Some-State, C=AU\n  Signature Algorithm: SHA1withRSA, OID = 1.2.840.113549.1.1.5\n\n  Key:  Sun RSA public key, 1024 bits\n  modulus: 160727294937100674052418117557127189651847571196362732267950231154583669741208039123297843737970625136905838074093728275314295320340327512794696230004970709260030426222477004322723356519420822761943386421709757113314557517682605199785130400421621862729817049636049166692192660633262262212409063658394663469257\n  public exponent: 65537\n  Validity: [From: Fri Jul 13 19:21:01 CEST 2012,\n               To: Sun Jun 19 19:21:01 CEST 2112]\n  Issuer: CN=ElasticSearch CA, O=Internet Widgits Pty Ltd, ST=Some-State, C=AU\n  SerialNumber: [    1000]\n\nCertificate Extensions: 4\n[1]: ObjectId: 2.16.840.1.113730.1.13 Criticality=false\nExtension unknown: DER encoded OCTET string =\n0000: 04 1F 16 1D 4F 70 65 6E   53 53 4C 20 47 65 6E 65  ....OpenSSL Gene\n0010: 72 61 74 65 64 20 43 65   72 74 69 66 69 63 61 74  rated Certificat\n0020: 65                                                 e\n\n\n[2]: ObjectId: 2.5.29.35 Criticality=false\nAuthorityKeyIdentifier [\nKeyIdentifier [\n0000: EC 64 93 4C C8 BC 66 48   79 43 C4 79 F3 20 19 BD  .d.L..fHyC.y. ..\n0010: A8 2F 77 97                                        ./w.\n]\n\n]\n\n[3]: ObjectId: 2.5.29.19 Criticality=false\nBasicConstraints:[\n  CA:false\n  PathLen: undefined\n]\n\n[4]: ObjectId: 2.5.29.14 Criticality=false\nSubjectKeyIdentifier [\nKeyIdentifier [\n0000: 4E E4 FB BC CA A9 E9 83   91 3A 4B 46 06 1C 88 94  N........:KF....\n0010: 5B 1B A5 FF                                        [...\n]\n]\n\n]\n  Algorithm: [SHA1withRSA]\n  Signature:\n0000: 6D 83 C0 93 B7 29 6E 45   E0 7F 3E 98 FE C8 31 A2  m....)nE..>...1.\n0010: E7 A1 FA 83 07 EE 41 BB   51 9E 1B 53 6A 9F 19 54  ......A.Q..Sj..T\n0020: 7F CD D7 4C C8 70 E2 89   D1 13 C6 9E 54 F4 D8 F7  ...L.p......T...\n0030: 6D 4F 64 96 C5 45 C3 86   95 9C D7 37 ED 86 A7 CA  mOd..E.....7....\n0040: FA AC 0D 2C 8E BA F4 77   B9 03 74 30 69 57 FB A8  ...,...w..t0iW..\n0050: 31 FA B5 49 94 40 21 96   68 3B 7B CD EC 6C 88 95  1..I.@!.h;...l..\n0060: 9D 0E 8D 37 55 96 A6 B3   C3 7A 51 30 2F 2A A9 6D  ...7U....zQ0/*.m\n0070: FA E4 6D CB 16 CE D7 26   B8 E4 FC 4D 9E 33 92 05  ..m....&...M.3..\n\n]" 
+jruby-1.6.7 :028 > ks.getCertificate("1").get_public_key
+ => #<Java::SunSecurityRsa::RSAPublicKeyImpl:0x7481933a> 
+jruby-1.6.7 :029 > ks.getCertificate("1").get_private_key
+NoMethodError: undefined method `get_private_key' for #<Java::SunSecurityX509::X509CertImpl:0x304caadb>
+	from (irb):29:in `evaluate'
+	from org/jruby/RubyKernel.java:1083:in `eval'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:158:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:271:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:270:in `signal_status'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:155:in `eval_input'
+	from org/jruby/RubyKernel.java:1410:in `loop'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:154:in `eval_input'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:71:in `start'
+	from org/jruby/RubyKernel.java:1183:in `catch'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/lib/ruby/1.8/irb.rb:70:in `start'
+	from /Users/skade/.rvm/rubies/jruby-1.6.7/bin/jirb:17:in `(root)'
+jruby-1.6.7 :030 > ks.getCertificate("1"). getSubjectDN
+ => #<Java::SunSecurityX509::X500Name:0x1a7b5617> 
+jruby-1.6.7 :031 > ks.getCertificate("1").getSubjectDN
+ => #<Java::SunSecurityX509::X500Name:0x1a7b5617> 
+jruby-1.6.7 :032 > ks.getCertificate("1").getSubjectDN.to_s
+ => "CN=node1, O=Internet Widgits Pty Ltd, ST=Some-State, C=AU" 
+jruby-1.6.7 :033 > ks.getCertificate("1").getSubjectDN.getCommonName
+ => "node1" 
+jruby-1.6.7 :034 >

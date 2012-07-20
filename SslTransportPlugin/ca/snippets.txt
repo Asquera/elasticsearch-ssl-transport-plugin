@@ -1,0 +1,27 @@
+openssl req -new -x509 -extensions v3_ca \
+-keyout demoCA/private/cakey.pem -out demoCA/cacert.pem \
+-config openssl.cnf
+
+openssl req -new -nodes \
+-out demoCA/node1-req.pem \
+-keyout demoCA/private/node1-key.pem \
+-config openssl.cnf
+
+openssl ca \
+-config openssl.cnf \
+-out demoCA/node1-cert.pem \
+-infiles demoCA/node1-req.pem
+
+openssl req -new -nodes \
+-out demoCA/node2-req.pem \
+-keyout demoCA/private/node2-key.pem \
+-config openssl.cnf
+
+openssl ca \
+-config openssl.cnf \
+-out demoCA/node2-cert.pem \
+-infiles demoCA/node2-req.pem
+
+openssl pkcs12 -export -chain -in demoCA/node1-cert.pem -certfile demoCA/cacert.pem -inkey demoCA/private/node1-key.pem -CAfile demoCA/cacert.pem -out node1.pkcs12
+
+openssl pkcs12 -export -chain -in demoCA/node2-cert.pem -certfile demoCA/cacert.pem -inkey demoCA/private/node2-key.pem -CAfile demoCA/cacert.pem -out node2.pkcs12
